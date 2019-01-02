@@ -17,6 +17,10 @@ exports.login = async (req, res) => {
     return;
   }
   const passwordIsValid = bcrypt.compareSync(password, user.password);
+  if (!passwordIsValid) {
+    res.status(401).send();
+    return;
+  }
   res.send(
     jwt.sign(
       { userId: user.id, username: user.userName, fullName: user.fullName },
