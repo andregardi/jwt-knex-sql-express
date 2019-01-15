@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './app/knex/dev.sqlite3'
+      filename: './dev.sqlite3'
     }
   },
 
